@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31727.386
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GerEstoque.Api", "GerEstoque.Api\GerEstoque.Api.csproj", "{43D65195-7D09-480F-A2C5-D6C783A161DA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GerEstoque.Core", "GerEstoque.Core\GerEstoque.Core.csproj", "{C2BDC8D7-00F6-435B-98B8-DC366FDF2213}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{43D65195-7D09-480F-A2C5-D6C783A161DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43D65195-7D09-480F-A2C5-D6C783A161DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43D65195-7D09-480F-A2C5-D6C783A161DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43D65195-7D09-480F-A2C5-D6C783A161DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2BDC8D7-00F6-435B-98B8-DC366FDF2213}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2BDC8D7-00F6-435B-98B8-DC366FDF2213}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2BDC8D7-00F6-435B-98B8-DC366FDF2213}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2BDC8D7-00F6-435B-98B8-DC366FDF2213}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {17998BF3-7697-4BCC-ABC6-C2F6B21B58E2}
+	EndGlobalSection
+EndGlobal
