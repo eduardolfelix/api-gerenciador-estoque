@@ -14,19 +14,20 @@ namespace GerEstoque.Api.Services
             _categoriaRepository = categoriaRepository;
         }
 
-        public Task<Categoria> AddAsync(Categoria categoria)
+        public async Task<Categoria> Add(Categoria categoria)
         {
-            throw new NotImplementedException();
+            await _categoriaRepository.Add(categoria);
+            return categoria;
         }
 
-        public async Task<Categoria> GetByIdAsync(Guid id)
+        public async Task<Categoria> GetById(Guid id)
         {
-            return await _categoriaRepository.GetByIdAsync(id);
+            return await _categoriaRepository.GetById(id);
         }
 
-        public async Task<IEnumerable<Categoria>> ListAsync()
+        public async Task<IEnumerable<Categoria>> List()
         {
-            return await _categoriaRepository.ListAsync();
+            return await _categoriaRepository.List();
         }
     }
 }

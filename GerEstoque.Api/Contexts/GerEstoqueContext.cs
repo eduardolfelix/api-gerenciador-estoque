@@ -19,6 +19,7 @@ namespace GerEstoque.Api.Contexts
             builder.ApplyConfiguration(new CategoriaMap());
             builder.ApplyConfiguration(new ProdutoMap());
             builder.ApplyConfiguration(new MovimentacaoMap());
+            builder.ApplyConfigurationsFromAssembly(typeof(GerEstoqueContext).Assembly);
         }
     }
 }

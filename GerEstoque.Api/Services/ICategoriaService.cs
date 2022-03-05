@@ -7,8 +7,8 @@ namespace GerEstoque.Api.Services
 {
     public interface ICategoriaService
     {
-         Task<IEnumerable<Categoria>> ListAsync();
-         Task<Categoria> GetByIdAsync(Guid id);
-         Task<Categoria> AddAsync(Categoria categoria);
+         Task<IEnumerable<Categoria>> List();
+         Task<Categoria> GetById(Guid id);
+         Task<Categoria> Add(Categoria categoria);
     }
 }

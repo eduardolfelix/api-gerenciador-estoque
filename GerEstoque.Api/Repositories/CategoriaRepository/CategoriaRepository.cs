@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using System.Threading.Tasks;
 using GerEstoque.Api.Contexts;
 using GerEstoque.Api.Persistance.Repositories;
@@ -15,14 +16,14 @@ namespace GerEstoque.Api.Repositories.CategoriaRepository
         {
         }
 
-        public async Task AddAsync(Categoria categoria)
+        public async Task Add(Categoria categoria)
         {
             await _gerEstoqueContext.Categorias.AddAsync(categoria);
         }
 
-        public Task AddMultipleAsync(IEnumerable<Categoria> entityList)
+        public async Task AddMultiple(IEnumerable<Categoria> categoria)
         {
-            throw new NotImplementedException();
+            await _gerEstoqueContext.AddRangeAsync(categoria);
         }
 
         public void Dispose()
@@ -30,12 +31,17 @@ namespace GerEstoque.Api.Repositories.CategoriaRepository
             _gerEstoqueContext.Dispose();
         }
 
-        public async Task<Categoria> GetByIdAsync(Guid id)
+        public Task<IEnumerable<Categoria>> Find(Expression<Func<Categoria, bool>> predicate)
+        {
+            throw new NotImplementedException();
+        }
+
+        public async Task<Categoria> GetById(Guid id)
         {
             return await _gerEstoqueContext.Categorias.FindAsync(id);
         }
 
-        public async Task<IEnumerable<Categoria>> ListAsync()
+        public async Task<IEnumerable<Categoria>> List()
         {
             return await _gerEstoqueContext.Categorias.ToListAsync();
         }
@@ -45,7 +51,12 @@ namespace GerEstoque.Api.Repositories.CategoriaRepository
             _gerEstoqueContext.Categorias.Remove(categoria);
         }
 
-        public async Task<int> SaveChangesAsync()
+        public void RemoveById(Categoria categoria)
+        {
+            throw new NotImplementedException();
+        }
+
+        public async Task<int> SaveChanges()
         {
             return await _gerEstoqueContext.SaveChangesAsync();
         }

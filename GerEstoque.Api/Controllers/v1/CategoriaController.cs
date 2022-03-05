@@ -21,10 +21,10 @@ namespace GerEstoque.Api.Controllers.v1
             _categoriaService = categoriaService;
         }
         [HttpGet(Endpoints.Categorias.BaseCategoriaEndpoint)]
-        public async Task<ActionResult<IEnumerable<Categoria>>>GetAllAsync(){
+        public async Task<ActionResult<IEnumerable<Categoria>>>GetAll(){
             try
             {
-                return Ok(await _categoriaService.ListAsync());
+                return Ok(await _categoriaService.List());
             }
             catch (Exception ex)
             {
@@ -32,17 +32,18 @@ namespace GerEstoque.Api.Controllers.v1
                 return StatusCode(StatusCodes.Status500InternalServerError,$"Erro: {ex.Message}");
             }
         }
-        // [HttpPost(Endpoints.Categorias.BaseCategoriaEndpoint)]
-        // public async Task<ActionResult<IEnumerable<Categoria>>>PostAsync(Guid id){
-        //     try
-        //     {
-        //         return Ok(await _categoriaService. );
-        //     }
-        //     catch (Exception ex)
-        //     {
+        [HttpPost(Endpoints.Categorias.BaseCategoriaEndpoint)]
+        public async Task<ActionResult<IEnumerable<Categoria>>>Post(Categoria categoria){
+            try
+            {
+                return StatusCode(StatusCodes.Status201Created, 
+                    await _categoriaService.Add(categoria));
+            }
+            catch (Exception ex)
+            {
                 
-        //         return StatusCode(StatusCodes.Status500InternalServerError,$"Erro: {ex.Message}");
-        //     }
-        // }
+                return StatusCode(StatusCodes.Status500InternalServerError,$"Erro: {ex.Message}");
+            }
+        }
     }
 }
